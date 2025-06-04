@@ -43,37 +43,58 @@
 
 //---------------------------------------------
 //Type Union
-type IDFieldType = string | number;
+// type IDFieldType = string | number;
 
-const printID = (id: IDFieldType) => {
-    console.log("ID: " + id);
-}
+// const printID = (id: IDFieldType) => {
+//     console.log("ID: " + id);
+// }
 
-printID("id123");
-printID(2342344234);
+// printID("id123");
+// printID(2342344234);
 
-//Type Intersection
-interface BusinessPartner {
-    name: string;
-    creditScore: number;
-}
+// //Type Intersection
+// interface BusinessPartner {
+//     name: string;
+//     creditScore: number;
+// }
 
-interface UserIdentity {
-    id: number;
-    email: string;
-}
+// interface UserIdentity {
+//     id: number;
+//     email: string;
+// }
 
-type Employee = BusinessPartner & UserIdentity
+// type Employee = BusinessPartner & UserIdentity
 
-const signContract = (employee: Employee): void => {
-    console.log("Contract signed by" + employee.name + " with email: " + employee.email);
-}
+// const signContract = (employee: Employee): void => {
+//     console.log("Contract signed by" + employee.name + " with email: " + employee.email);
+// }
 
-signContract({
-    name: "Pedro",
-    creditScore: 800,
-    id: 34,
-    email: "pedro@gmail.com",
-});
+// signContract({
+//     name: "Pedro",
+//     creditScore: 800,
+//     id: 34,
+//     email: "pedro@gmail.com",
+// });
 
 //---------------------------------------------
+//ENUMS
+
+//unauthorized, user doesn't exist, wrong credentials,internal error
+
+// enum LoginError {
+//     Unauthorized = "unauthorized",
+//     NoUser = "nouser",
+//     WrongCredentials = "wrongcredentials",
+//     Internal = "internal",
+// }
+
+// const printErrorMsg = (error: LoginError) => {
+//     if(error == LoginError.Unauthorized){
+//         console.log("User not authorized");
+//     }else if(error == LoginError.NoUser){
+//        console.log("No user was found with that user name"); 
+//     }
+//     //print remaining similarly
+// };
+
+// printErrorMsg(LoginError.NoUser);
