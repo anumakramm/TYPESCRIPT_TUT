@@ -98,3 +98,36 @@
 // };
 
 // printErrorMsg(LoginError.NoUser);
+
+//---------------------------------------------
+//Generic types
+
+// class StorageContianer<T> {
+//     private contents: T[];
+
+//     constructor(){
+//         this.contents = [];
+//     }
+
+//     addItem(item: T): void {
+//         this.contents.push(item);
+//     }
+
+//     getItem(idx: number): T | undefined{
+//         return this.contents[idx];
+//     }
+// }
+
+// const usernames = new StorageContianer<string>();
+// usernames.addItem("pedrotech");
+// usernames.addItem("echo br");
+
+// console.log(usernames.getItem(0));
+
+// const friendsCount = new StorageContianer<number>();
+// friendsCount.addItem(23);
+// friendsCount.addItem(678);
+
+// console.log(friendsCount.getItem(0));
+
+//---------------------------------------------

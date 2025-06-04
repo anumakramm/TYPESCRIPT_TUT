@@ -64,20 +64,39 @@
 //---------------------------------------------
 //ENUMS
 //unauthorized, user doesn't exist, wrong credentials,internal error
-var LoginError;
-(function (LoginError) {
-    LoginError["Unauthorized"] = "unauthorized";
-    LoginError["NoUser"] = "nouser";
-    LoginError["WrongCredentials"] = "wrongcredentials";
-    LoginError["Internal"] = "internal";
-})(LoginError || (LoginError = {}));
-const printErrorMsg = (error) => {
-    if (error == LoginError.Unauthorized) {
-        console.log("User not authorized");
+// enum LoginError {
+//     Unauthorized = "unauthorized",
+//     NoUser = "nouser",
+//     WrongCredentials = "wrongcredentials",
+//     Internal = "internal",
+// }
+// const printErrorMsg = (error: LoginError) => {
+//     if(error == LoginError.Unauthorized){
+//         console.log("User not authorized");
+//     }else if(error == LoginError.NoUser){
+//        console.log("No user was found with that user name"); 
+//     }
+//     //print remaining similarly
+// };
+// printErrorMsg(LoginError.NoUser);
+//---------------------------------------------
+//Generic types
+class StorageContianer {
+    constructor() {
+        this.contents = [];
     }
-    else if (error == LoginError.NoUser) {
-        console.log("No user was found with that user name");
+    addItem(item) {
+        this.contents.push(item);
     }
-    //print remaining similarly
-};
-printErrorMsg(LoginError.NoUser);
+    getItem(idx) {
+        return this.contents[idx];
+    }
+}
+const usernames = new StorageContianer();
+usernames.addItem("pedrotech");
+usernames.addItem("echo br");
+console.log(usernames.getItem(0));
+const friendsCount = new StorageContianer();
+friendsCount.addItem(23);
+friendsCount.addItem(678);
+console.log(friendsCount.getItem(0));
