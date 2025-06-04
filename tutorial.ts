@@ -131,3 +131,23 @@
 // console.log(friendsCount.getItem(0));
 
 //---------------------------------------------
+//Read Only
+interface Employee{
+    readonly employeeId: number;
+    readonly startDate: Date;
+
+    name:string;
+    department:string
+}
+
+const employee: Employee = {
+    employeeId: 123,
+    startDate: new Date(),
+    name: "Pedro",
+    department: "Finance",
+};
+
+employee.name = "Jessica";
+// employee.employeeId = 6666;
+
+console.log(employee);
